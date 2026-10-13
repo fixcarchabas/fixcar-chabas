@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FIXCAR Chabás | Repuestos para talleres y camionetas en la región</title>
+<meta name="description" content="Distribución regional de repuestos FIXCAR desde Chabás: Casilda, Pujato, Arequito, Firmat y toda la zona. Envíos a todo el país.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* PALETA PROVISORIA: reemplazar por los colores oficiales del logo FIXCAR */
+  --brand:#0e7fc5; --brand-ink:#ffffff; --ink:#12263a; --muted:#4f6275;
+  --bg:#f3f9fd; --card:#ffffff; --line:#cfe3f1; --dark:#0e7fc5; --deep:#0a6aa8; --soft:#e3f3fc; --wa:#1a9b52;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.55 Barlow,system-ui,sans-serif}
+h1,h2,h3{font-family:'Barlow Condensed',Impact,sans-serif;line-height:1.05;margin:0;letter-spacing:.2px}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+header{position:sticky;top:0;z-index:20;background:var(--dark);color:#fff}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:60px}
+.logo{display:flex;flex-direction:column;text-decoration:none;line-height:1}
+.logo b{font:700 26px 'Barlow Condensed',sans-serif;letter-spacing:1px}
+.logo b i{font-style:normal;color:#bfe9ff}
+.logo small{font-size:11px;opacity:.75;margin-top:2px}
+nav{display:none;gap:20px;font-weight:500;font-size:15px}
+nav a{text-decoration:none;opacity:.85}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:0 22px;border-radius:8px;border:2px solid transparent;font:600 17px Barlow,sans-serif;text-decoration:none;cursor:pointer}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-brand{background:var(--brand);color:var(--brand-ink)}
+.btn-line{background:transparent;color:inherit;border-color:currentColor}
+.btn:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,a:focus-visible,button:focus-visible{outline:3px solid #12263a;outline-offset:2px}
+.hero{background:var(--dark);color:#fff;padding:36px 0 44px;border-bottom:6px solid #bfe9ff}
+.hero h1{font-size:clamp(40px,9vw,72px);max-width:14ch}
+.hero p{max-width:52ch;font-size:18px;opacity:.95;margin:14px 0 22px}
+.search{display:grid;gap:10px;background:var(--card);color:var(--ink);padding:14px;border-radius:10px;max-width:760px}
+.search .row{display:grid;gap:10px}
+label{font-size:13px;font-weight:600;color:var(--muted);display:block;margin-bottom:4px}
+input,select,textarea{width:100%;min-height:48px;padding:10px 12px;border:1.5px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit}
+textarea{min-height:90px;resize:vertical}
+.ctas{display:grid;gap:10px;margin-top:16px;max-width:760px}
+section{padding:46px 0}
+section h2{font-size:clamp(30px,6vw,44px);margin-bottom:10px}
+.lead{color:var(--muted);max-width:62ch;margin:0 0 24px}
+.grid{display:grid;gap:12px}
+.cat{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--brand);border-radius:8px;padding:16px;text-decoration:none;display:block}
+.cat h3{font-size:22px}.cat span{color:var(--muted);font-size:14px}
+.band{background:var(--dark);color:#fff}
+.band .lead{color:#dff3fd}
+.steps{display:grid;gap:12px;counter-reset:s;list-style:none;padding:0;margin:0}
+.steps li{counter-increment:s;background:var(--deep);border-radius:8px;padding:16px 16px 16px 58px;position:relative}
+.steps li::before{content:counter(s);position:absolute;left:14px;top:14px;width:30px;height:30px;border-radius:50%;background:#fff;color:var(--brand);font:700 18px 'Barlow Condensed';display:grid;place-items:center}
+.steps b{display:block;font-size:17px}
+.steps span{color:#dff3fd;font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px;padding:0;list-style:none}
+.chips li{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-weight:500;font-size:15px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px}
+.two{display:grid;gap:12px}
+.form{display:grid;gap:12px;max-width:640px}
+.form .half{display:grid;gap:12px}
+.hint{font-size:13px;color:var(--muted)}
+.note{background:#fff4d6;color:#4a3b00;border-radius:8px;padding:10px 14px;font-size:14px}
+footer{background:var(--deep);color:#dff3fd;padding:32px 0 90px;font-size:14px}
+footer b{color:#fff}
+.fab{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:30;box-shadow:0 4px 14px rgba(0,0,0,.35)}
+
+/* ASISTENTE AUTOMÁTICO + AVISOS (agregado) */
+.botbtn{position:fixed;left:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:30;box-shadow:0 4px 14px rgba(0,0,0,.35);background:var(--deep)}
+.bot{position:fixed;left:14px;bottom:calc(76px + env(safe-area-inset-bottom,0px));z-index:40;width:min(390px,calc(100vw - 28px));height:min(600px,calc(100dvh - 96px));display:none;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.35);overflow:hidden}
+.bot.open{display:flex}
+.bot-h{background:var(--dark);color:#fff;padding:10px 12px 10px 16px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.bot-h b{font:700 22px 'Barlow Condensed',sans-serif;letter-spacing:.5px}
+.bot-h small{display:block;font-size:12px;opacity:.85}
+.bot-x{min-width:44px;min-height:44px;border:0;background:transparent;color:#fff;font:400 28px/1 Barlow,sans-serif;cursor:pointer;border-radius:8px}
+.bot-log{flex:1;min-height:0;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px;background:var(--bg)}
+.m{max-width:88%;padding:9px 12px;border-radius:12px;white-space:pre-wrap;overflow-wrap:anywhere;font-size:15px;line-height:1.45}
+.m.b{background:#fff;border:1px solid var(--line);align-self:flex-start;border-bottom-left-radius:4px}
+.m.u{background:var(--brand);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+.qr{display:flex;flex-wrap:wrap;gap:6px;padding:8px 12px;background:var(--bg);max-height:40%;overflow:auto;border-top:1px solid var(--line)}
+.qr:empty{display:none}
+.qr button{min-height:44px;padding:0 12px;border-radius:999px;border:1.5px solid var(--brand);background:#fff;color:var(--deep);font:600 15px Barlow,sans-serif;cursor:pointer}
+.bot-f{display:flex;gap:8px;padding:10px;border-top:1px solid var(--line);background:var(--card)}
+.bot-f input{flex:1;min-width:0}
+.aviso{position:fixed;left:50%;top:76px;transform:translateX(-50%);z-index:60;max-width:min(520px,calc(100vw - 28px));background:#12263a;color:#fff;padding:12px 16px;border-radius:10px;font-size:15px;box-shadow:0 6px 20px rgba(0,0,0,.35);display:none}
+.aviso.on{display:block}
+.aviso.z-rosario{border-left:8px solid #4aa8ea}.aviso.z-region{border-left:8px solid #3fbf78}.aviso.z-nacional{border-left:8px solid #f08a2e}
+.m.z-rosario{background:#e3f3fc;border-color:#0a6aa8;border-left:6px solid #0a6aa8}
+.m.z-region{background:#e6f6ec;border-color:#1a8f4e;border-left:6px solid #1a8f4e}
+.m.z-nacional{background:#fff0e1;border-color:#c2570c;border-left:6px solid #c2570c}
+.chips-z li{background:#e6f6ec;border-color:#1a8f4e}
+.zb{border-left:6px solid transparent;padding-left:12px;margin:0 0 14px}
+.zb-n{border-left-color:#c2570c}.zb-r{border-left-color:#0a6aa8}
+.legend{list-style:none;margin:0 0 18px;padding:0;display:grid;gap:8px}
+.legend li{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:9px 12px;font-size:15px}
+.legend .lg-r{border-left:6px solid #0a6aa8}.legend .lg-z{border-left:6px solid #1a8f4e}.legend .lg-n{border-left:6px solid #c2570c}
+.half2{display:grid;gap:12px}
+@media(min-width:720px){
+  nav{display:flex}
+  .search .row{grid-template-columns:repeat(4,1fr)}
+  .ctas{grid-template-columns:repeat(auto-fit,minmax(170px,1fr));max-width:900px}
+  .grid.c3{grid-template-columns:repeat(3,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .two{grid-template-columns:1fr 1fr}
+  .form .half{grid-template-columns:1fr 1fr}
+  .half2{grid-template-columns:1fr 1fr}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#top" aria-label="FIXCAR Chabás"><b>FIX<i>CAR</i> CHABÁS</b><small>Representación regional · Repuestos</small></a>
+    <nav aria-label="Principal">
+      <a href="#buscar">Buscar repuesto</a><a href="#camionetas">Camionetas</a><a href="#zona">Zona de reparto</a><a href="#como">Cómo comprar</a><a href="#" id="web-oficial-nav" target="_blank" rel="noopener">Sitio oficial FIXCAR</a>
+    </nav>
+    <a class="btn btn-wa" style="min-height:44px;padding:0 16px" href="#" data-wa="Hola, quiero consultar por un repuesto FIXCAR.">WhatsApp</a>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div class="wrap">
+    <h1>Repuestos FIXCAR en toda la región</h1>
+    <p>Atendemos a talleres, empresas, productores, compañías de seguros y particulares desde Chabás. Pedí por WhatsApp o desde la web y te lo llevamos. Envíos a todo el país.</p>
+    <form class="search" id="buscar" onsubmit="return enviarBusqueda(event)">
+      <div class="row">
+        <div><label for="s-marca">Marca</label><input id="s-marca" placeholder="Ej: Ford" autocomplete="off"></div>
+        <div><label for="s-modelo">Modelo</label><input id="s-modelo" placeholder="Ej: Ranger" autocomplete="off"></div>
+        <div><label for="s-anio">Año</label><input id="s-anio" inputmode="numeric" placeholder="Ej: 2016"></div>
+        <div><label for="s-rep">Repuesto o código</label><input id="s-rep" placeholder="Ej: pastillas de freno" autocomplete="off"></div>
+      </div>
+      <div class="half2">
+        <div><label for="s-chasis">Número de chasis (obligatorio)</label><input id="s-chasis" required autocapitalize="characters" placeholder="Figura en la tarjeta verde"></div>
+        <div><label for="s-loc">Localidad y provincia</label><input id="s-loc" required placeholder="Ej: Chabás, Santa Fe" autocomplete="address-level2"></div>
+      </div>
+      <label style="display:flex;gap:10px;align-items:center;font-size:15px;color:var(--ink)"><input id="s-verde" type="checkbox" style="width:24px;min-height:24px"> Voy a adjuntar la foto de la tarjeta verde</label>
+      <button class="btn btn-brand" type="submit">Consultar disponibilidad (WhatsApp y mail)</button>
+    </form>
+    <div class="ctas">
+      <a class="btn btn-wa" href="#" data-wa="Hola, quiero hacer un pedido de repuestos.">Hacer un pedido</a>
+      <a class="btn btn-line" href="#presupuesto">Pedir presupuesto</a>
+      <a class="btn btn-line" href="#presupuesto" onclick="document.getElementById('p-tipo').value='Compañía de seguros'">Presupuesto para seguros</a>
+      <a class="btn btn-line" href="#no-encuentro">No encuentro el repuesto</a>
+      <a class="btn btn-line" href="#" id="catalogo" target="_blank" rel="noopener">Catálogo FIXCAR</a>
+    </div>
+  </div>
+</div>
+
+<section id="no-encuentro">
+  <div class="wrap two">
+    <div>
+      <h2>¿No encontrás el repuesto?</h2>
+      <p class="lead">Mandanos una foto, código o modelo y lo buscamos por vos.</p>
+      <p class="hint">Después de completar el formulario se abre WhatsApp con tu consulta armada y la enviamos también por mail a nuestro equipo. En WhatsApp adjuntás la foto del repuesto, de la caja/etiqueta y de la tarjeta verde.</p>
+    </div>
+    <form class="form box" onsubmit="return enviarNoEncuentro(event)">
+      <div class="half">
+        <div><label for="n-nom">Nombre</label><input id="n-nom" required autocomplete="name"></div>
+        <div><label for="n-loc">Localidad y provincia</label><input id="n-loc" required placeholder="Ej: Chabás, Santa Fe" autocomplete="address-level2"></div>
+      </div>
+      <div class="half">
+        <div><label for="n-veh">Vehículo (marca y modelo)</label><input id="n-veh" required placeholder="Ej: Ford Ranger"></div>
+        <div><label for="n-anio">Año y motor</label><input id="n-anio" placeholder="Ej: 2016, 3.2 diésel"></div>
+      </div>
+      <div><label for="n-chasis">Número de chasis (obligatorio)</label><input id="n-chasis" required autocapitalize="characters" placeholder="Figura en la tarjeta verde"></div>
+      <label style="display:flex;gap:10px;align-items:center;font-size:15px;color:var(--ink)"><input id="n-verde" type="checkbox" style="width:24px;min-height:24px"> Voy a adjuntar la foto de la tarjeta verde</label>
+      <div><label for="n-rep">Qué repuesto necesitás (código si lo tenés)</label><textarea id="n-rep" required></textarea></div>
+      <button class="btn btn-wa" type="submit">Enviar por WhatsApp y mail</button>
+    </form>
+  </div>
+</section>
+
+<section id="camionetas" style="background:var(--card)">
+  <div class="wrap">
+    <h2>Camionetas y vehículos de trabajo</h2>
+    <p class="lead">Repuestos para las camionetas que más circulan en el campo y el reparto. Buscá por marca, modelo, año, motor, patente o código.</p>
+    <ul class="chips"><li>Ford</li><li>Toyota</li><li>Volkswagen</li><li>Chevrolet</li><li>Renault</li><li>Fiat</li><li>Y todas las demás</li></ul>
+    <p class="lead">Somos multimarca: consultanos por cualquier marca.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Qué podés pedir</h2>
+    <p class="lead">Las mismas categorías del catálogo oficial de FIXCAR.</p>
+    <div class="grid c3">
+      <a class="cat" href="#" data-wa="Hola, consulto por motor y distribución."><h3>Motor y distribución</h3><span>Consultar por WhatsApp</span></a>
+      <a class="cat" href="#" data-wa="Hola, consulto por frenos y suspensión."><h3>Frenos y suspensión</h3><span>Consultar por WhatsApp</span></a>
+      <a class="cat" href="#" data-wa="Hola, consulto por baterías."><h3>Baterías</h3><span>Consultar por WhatsApp</span></a>
+      <a class="cat" href="#" data-wa="Hola, consulto por carrocería."><h3>Carrocería</h3><span>Consultar por WhatsApp</span></a>
+      <a class="cat" href="#" data-wa="Hola, consulto por filtros y lubricantes."><h3>Filtros y lubricantes</h3><span>Consultar por WhatsApp</span></a>
+      <a class="cat" href="#" data-wa="Hola, consulto por accesorios."><h3>Accesorios</h3><span>Consultar por WhatsApp</span></a>
+      <a class="cat" href="#" data-wa="Hola, consulto por herramientas para talleres."><h3>Herramientas para talleres</h3><span>Consultar por WhatsApp</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="como">
+  <div class="wrap">
+    <h2>Cómo funciona</h2>
+    <p class="lead">Vos tratás con nosotros en Chabás. La casa central de FIXCAR en Rosario factura y prepara el pedido.</p>
+    <ol class="steps">
+      <li><b>Pedís</b><span>Por WhatsApp, por la web o con tu representante.</span></li>
+      <li><b>Te confirmamos</b><span>Revisamos el repuesto, la disponibilidad y las condiciones.</span></li>
+      <li><b>Factura y preparación</b><span>La casa central de FIXCAR en Rosario factura y prepara el pedido.</span></li>
+      <li><b>Recibís</b><span>Lo distribuimos desde Chabás por tu zona, o lo enviamos a todo el país.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section id="zona">
+  <div class="wrap two">
+    <div>
+      <h2>Zona de reparto</h2>
+      <p class="lead">Chabás es el punto de enlace con Rosario para toda la zona de influencia, hasta Firmat. Los días y costos de reparto se confirman al pedir.</p>
+      <ul class="chips chips-z"><li>Chabás</li><li>Casilda</li><li>Pujato</li><li>Arequito</li><li>San José de la Esquina</li><li>Los Molinos</li><li>Arteaga</li><li>Fuentes</li><li>Villada</li><li>Firmat</li><li>Y alrededores</li></ul>
+      <ul class="legend" aria-label="Cómo atendemos cada zona">
+        <li class="lg-r"><b>Rosario</b> · se deriva internamente a la casa central de FIXCAR Rosario</li>
+        <li class="lg-z"><b>Zona de influencia</b> · reparto desde Chabás</li>
+        <li class="lg-n"><b>Resto del país</b> · envío a coordinar</li>
+      </ul>
+    </div>
+    <div class="box">
+      <div class="zb zb-n">
+        <h3 style="font-size:26px">Envíos a todo el país</h3>
+        <p>Si estás fuera de la región, pedinos igual: coordinamos el envío.</p>
+      </div>
+      <div class="zb zb-r">
+        <h3 style="font-size:26px">¿Sos de Rosario?</h3>
+        <p>Te derivamos con la casa central de FIXCAR en Rosario, que te atiende directamente.</p>
+      </div>
+      <a class="btn btn-wa" href="#" data-wa="Hola, quiero consultar si hacen envíos a mi localidad.">Consultar mi localidad</a>
+      <p style="margin:12px 0 0"><a href="#" id="wa-central">WhatsApp casa central Rosario: +54 9 341 684-2104</a></p>
+    </div>
+  </div>
+</section>
+
+<section id="presupuesto" style="background:var(--card)">
+  <div class="wrap two">
+    <div>
+      <h2>Presupuesto para talleres, empresas y seguros</h2>
+      <p class="lead">Para talleres y empresas: pasanos el vehículo y la lista de repuestos, y te respondemos con precio y plazo.</p>
+    </div>
+    <form class="form box" onsubmit="return enviarPresupuesto(event)">
+      <div><label for="p-tipo">Quién solicita</label><select id="p-tipo"><option>Taller</option><option>Empresa</option><option>Productor</option><option>Compañía de seguros</option><option>Particular</option></select></div>
+      <div class="half">
+        <div><label for="p-nom">Nombre o razón social</label><input id="p-nom" required></div>
+        <div><label for="p-loc">Localidad y provincia</label><input id="p-loc" required placeholder="Ej: Casilda, Santa Fe"></div>
+      </div>
+      <div class="half">
+        <div><label for="p-veh">Marca y modelo del vehículo</label><input id="p-veh" required placeholder="Ej: Ford Ranger"></div>
+        <div><label for="p-anio">Año</label><input id="p-anio" inputmode="numeric"></div>
+      </div>
+      <div class="half">
+        <div><label for="p-pat">Patente</label><input id="p-pat" autocapitalize="characters"></div>
+        <div><label for="p-motor">Número de motor</label><input id="p-motor"></div>
+      </div>
+      <div><label for="p-chasis">Número de chasis (obligatorio)</label><input id="p-chasis" required autocapitalize="characters" placeholder="Figura en la tarjeta verde"></div>
+      <div><label for="p-sin">Si es de seguro: compañía y número de siniestro</label><input id="p-sin"></div>
+      <label style="display:flex;gap:10px;align-items:center;font-size:15px;color:var(--ink)"><input id="p-verde" type="checkbox" style="width:24px;min-height:24px"> Voy a adjuntar la foto de la tarjeta verde</label>
+      <p class="hint">Con la foto de la tarjeta verde alcanza: ahí figuran chasis y motor. La adjuntás en WhatsApp después de enviar.</p>
+      <div><label for="p-lista">Repuestos que necesitás</label><textarea id="p-lista" required placeholder="Un repuesto por línea"></textarea></div>
+      <button class="btn btn-wa" type="submit">Solicitar presupuesto (WhatsApp y mail)</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><b>FIXCAR Chabás</b> · Representación comercial regional de FIXCAR Repuestos. Las compras se facturan por la casa central de FIXCAR en Rosario.</p>
+    <p>Casa central FIXCAR Rosario · WhatsApp <a href="#" id="wa-central-f">+54 9 341 684-2104</a></p>
+    <p>Chabás, Santa Fe · WhatsApp región: <span id="tel-visible">[completar número]</span></p>
+    <p><a href="#" id="web-oficial" target="_blank" rel="noopener">Sitio oficial de FIXCAR</a></p>
+  </div>
+</footer>
+
+<a class="btn btn-wa fab" href="#" data-wa="Hola, quiero hacer una consulta.">WhatsApp</a>
+
+<!-- Asistente automático -->
+<button type="button" class="btn btn-brand botbtn" id="bot-open" aria-controls="bot" aria-expanded="false">Asistente</button>
+<div class="bot" id="bot" role="dialog" aria-label="Asistente automático de FIXCAR Chabás">
+  <div class="bot-h">
+    <div><b>Asistente FIXCAR</b><small>Respuestas automáticas al instante</small></div>
+    <button type="button" class="bot-x" id="bot-close" aria-label="Cerrar asistente">×</button>
+  </div>
+  <div class="bot-log" id="bot-log" role="log" aria-live="polite"></div>
+  <div class="qr" id="bot-qr"></div>
+  <form class="bot-f" id="bot-form" autocomplete="off">
+    <input id="bot-in" aria-label="Escribí tu mensaje" placeholder="Escribí tu mensaje" autocomplete="off">
+    <button class="btn btn-brand" style="min-height:48px;padding:0 16px" type="submit">Enviar</button>
+  </form>
+</div>
+<div class="aviso" id="aviso" role="status" aria-live="polite"></div>
+
+<script>
+/* CONFIGURACIÓN */
+var CONFIG = {
+  whatsapp: "5493415421376",          // +54 9 341 542-1376 (formato internacional sin +)
+  whatsappVisible: "+54 9 341 542-1376",
+  email: "fixcarchabas@gmail.com",    // recibe todos los formularios y consultas del asistente
+  botPrimero: true,                   // true: los botones "WhatsApp" de la página pasan primero por el asistente (saluda, pide datos y luego deriva). false: abren WhatsApp directo.
+  catalogoUrl: "https://www.fixcarrepuestos.com.ar/",
+  webOficialUrl: "https://www.fixcarrepuestos.com.ar/",
+  casaCentral: "5493416842104"        // WhatsApp casa central FIXCAR Rosario
+};
+
+function waLink(t){
+  return "https://wa.me/"+(CONFIG.whatsapp||"")+"?text="+encodeURIComponent(t);
+}
+function abrirWA(t){
+  if(!CONFIG.whatsapp){alert("Falta cargar el número de WhatsApp de la región.\n\nMensaje que se enviaría:\n\n"+t);return;}
+  window.open(waLink(t),"_blank","noopener");
+}
+function aviso(t,k){
+  var a=document.getElementById("aviso");a.textContent=t;a.className="aviso on"+(k?" z-"+k:"");
+  clearTimeout(aviso._t);aviso._t=setTimeout(function(){a.className="aviso";},7000);
+}
+
+/* Saludo según la hora del dispositivo */
+function saludo(){var h=new Date().getHours();return h<12?"Buen día":(h<20?"Buenas tardes":"Buenas noches");}
+function saludoWA(){return "Hola, "+saludo().toLowerCase()+".";}
+
+/* ZONAS: Rosario (se deriva internamente a la casa central) · zona de influencia de Chabás · resto del país */
+var ZONA_REGION=["Chabás","Casilda","Pujato","Arequito","San José de la Esquina","Los Molinos","Arteaga","Fuentes","Villada","Firmat"];
+var OTRAS_PROV=["buenos aires","caba","capital federal","cordoba","entre rios","corrientes","chaco","santiago del estero","tucuman","salta","jujuy","mendoza","san juan","san luis","la pampa","neuquen","rio negro","chubut","santa cruz","tierra del fuego","misiones","formosa","catamarca","la rioja"];
+function norm(s){return (s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/\s+/g," ").trim();}
+function esOtraProv(n){return n.indexOf("santa fe")<0&&OTRAS_PROV.some(function(p){return new RegExp("(^|[^a-z])"+p+"($|[^a-z])").test(n);});}
+function zonaDe(loc){
+  var n=norm(loc);
+  var nac={k:"nacional",emoji:"🟧",corto:"NACIONAL",etiqueta:"NACIONAL",logistica:"Envío a todo el país a coordinar (transporte y costo)",nota:"Tu localidad no figura en nuestra zona de reparto habitual: coordinamos el envío (llegamos a todo el país) y te confirmamos costo y plazo."};
+  if(!n){return {k:"sin",emoji:"⬜",corto:"ZONA A CONFIRMAR",etiqueta:"A confirmar",logistica:"Confirmar la localidad antes de coordinar la logística",nota:""};}
+  if(esOtraProv(n)){return nac;}
+  if(/(^|[\s,.\-\/(])rosario($|[\s,.\-\/)])/.test(n)&&!/rosario (de|del)\b/.test(n)&&!/\b(villa|santa|san)( del)? rosario/.test(n)){
+    return {k:"rosario",emoji:"🟦",corto:"ROSARIO",etiqueta:"ROSARIO",logistica:"Derivar internamente a la casa central FIXCAR Rosario",nota:"Como sos de Rosario, tu consulta se deriva internamente a la casa central de FIXCAR Rosario, que te contesta."};
+  }
+  for(var i=0;i<ZONA_REGION.length;i++){
+    if(n.indexOf(norm(ZONA_REGION[i]))>-1){
+      return {k:"region",emoji:"🟩",corto:"ZONA DE INFLUENCIA",etiqueta:"ZONA DE INFLUENCIA ("+ZONA_REGION[i]+")",logistica:"Reparto desde Chabás; días y costo a confirmar",nota:"Estás en nuestra zona de influencia: repartimos desde Chabás (los días y el costo se confirman al pedir)."};
+    }
+  }
+  return nac;
+}
+/* Solo reconoce una zona si el texto la nombra (Rosario, una localidad de la zona o una provincia); si no, devuelve null */
+function zonaPista(t){var z=zonaDe(t);return (z.k==="rosario"||z.k==="region"||(z.k==="nacional"&&esOtraProv(norm(t))))?z:null;}
+function zonaCampos(z){return [["Zona",z.etiqueta],["Logística",z.logistica]];}
+function zonaWA(z){return z.emoji+" ZONA: "+z.etiqueta+" – "+z.logistica;}
+
+/* Mail: servicio FormSubmit (sin servidor propio). */
+function enviarMail(asunto, campos){
+  var body={_subject:asunto,_template:"table",_captcha:"false",_honey:""};
+  campos.forEach(function(c){if(c[1]){body[c[0]]=c[1];}});
+  return fetch("https://formsubmit.co/ajax/"+encodeURIComponent(CONFIG.email),{
+    method:"POST",
+    headers:{"Content-Type":"application/json","Accept":"application/json"},
+    body:JSON.stringify(body)
+  }).then(function(r){
+    return r.json().catch(function(){return {};}).then(function(j){
+      if(!r.ok||j.success===false||j.success==="false"){throw new Error("mail");}
+      return true;
+    });
+  });
+}
+
+/* Envía a mail (asunto y datos marcados con la zona) y abre WhatsApp. Debe llamarse dentro del clic del usuario. */
+var _enviando=false;
+function enviarTodo(tipo, quien, campos, waTexto, cb, z){
+  if(_enviando){return false;}
+  _enviando=true;setTimeout(function(){_enviando=false;},2500);
+  z=z||zonaDe("");
+  var asunto=z.emoji+" "+z.corto+" · FIXCAR Chabás · "+tipo+(quien?" · "+quien:"");
+  var pre=z.nota?z.nota+" ":"";
+  enviarMail(asunto,zonaCampos(z).concat(campos))
+    .then(function(){aviso(pre+"Tu consulta también llegó por mail a nuestro equipo.",z.k);if(cb)cb(true);})
+    .catch(function(){aviso(pre+"No pudimos enviar el mail, pero tu consulta sigue por WhatsApp: enviá el mensaje que se abrió.",z.k);if(cb)cb(false);});
+  abrirWA(waTexto);
+  return true;
+}
+
+function v(id){return document.getElementById(id).value.trim();}
+function chk(id){return document.getElementById(id).checked;}
+
+function enviarBusqueda(e){
+  e.preventDefault();
+  var veh=[v("s-marca"),v("s-modelo"),v("s-anio")].filter(Boolean).join(" ");
+  var verde=chk("s-verde"), z=zonaDe(v("s-loc"));
+  enviarTodo("Consulta de disponibilidad","",[
+    ["Localidad",v("s-loc")],["Vehículo",veh],["Repuesto/código",v("s-rep")],["Nº de chasis",v("s-chasis")],["Foto tarjeta verde",verde?"Sí, la adjunta por WhatsApp":"No"]
+  ],saludoWA()+" Consulto disponibilidad de repuesto.\n"+zonaWA(z)+"\nLocalidad: "+v("s-loc")+"\nVehículo: "+veh+"\nRepuesto/código: "+v("s-rep")+"\nNº de chasis: "+v("s-chasis")+(verde?"\n(Adjunto foto de la tarjeta verde)":""),null,z);
+  return false;
+}
+function enviarNoEncuentro(e){
+  e.preventDefault();
+  var verde=chk("n-verde"), z=zonaDe(v("n-loc"));
+  enviarTodo("No encuentro el repuesto",v("n-nom"),[
+    ["Nombre",v("n-nom")],["Localidad",v("n-loc")],["Vehículo",v("n-veh")],["Año/motor",v("n-anio")],["Nº de chasis",v("n-chasis")],["Repuesto",v("n-rep")],["Foto tarjeta verde",verde?"Sí, la adjunta por WhatsApp":"No"]
+  ],saludoWA()+" No encuentro un repuesto y necesito que lo busquen.\n"+zonaWA(z)+"\nNombre: "+v("n-nom")+"\nLocalidad: "+v("n-loc")+"\nVehículo: "+v("n-veh")+"\nAño/motor: "+v("n-anio")+"\nNº de chasis: "+v("n-chasis")+"\nRepuesto: "+v("n-rep")+(verde?"\n(Adjunto foto de la tarjeta verde)":"")+"\n(Adjunto foto del repuesto o de la caja/etiqueta)",null,z);
+  return false;
+}
+function enviarPresupuesto(e){
+  e.preventDefault();
+  var verde=chk("p-verde"), z=zonaDe(v("p-loc"));
+  enviarTodo("Presupuesto ("+v("p-tipo")+")",v("p-nom"),[
+    ["Solicita",v("p-tipo")],["Nombre o razón social",v("p-nom")],["Localidad",v("p-loc")],["Vehículo",v("p-veh")],["Año",v("p-anio")],["Patente",v("p-pat")],["Nº de motor",v("p-motor")],["Nº de chasis",v("p-chasis")],["Seguro/siniestro",v("p-sin")],["Foto tarjeta verde",verde?"Sí, la adjunta por WhatsApp":"No"],["Repuestos",v("p-lista")]
+  ],saludoWA()+" Solicito presupuesto.\n"+zonaWA(z)+"\nSolicita: "+v("p-tipo")+"\nNombre: "+v("p-nom")+"\nLocalidad: "+v("p-loc")+"\nVehículo: "+v("p-veh")+" "+v("p-anio")+"\nPatente: "+(v("p-pat")||"-")+"\nNº de motor: "+(v("p-motor")||"-")+"\nNº de chasis: "+v("p-chasis")+(v("p-sin")?"\nSeguro/siniestro: "+v("p-sin"):"")+(verde?"\n(Adjunto foto de la tarjeta verde)":"")+"\nRepuestos:\n"+v("p-lista"),null,z);
+  return false;
+}
+
+/* ASISTENTE AUTOMÁTICO (respuestas por reglas; no es una IA).
+   Orden de la conversación: 1) saluda, 2) pregunta, 3) recién después contesta o deriva.
+   Antes de derivar a una persona pide los mismos datos del cliente y del vehículo que los formularios. */
+var Bot=(function(){
+  var panel=document.getElementById("bot"),log=document.getElementById("bot-log"),qr=document.getElementById("bot-qr"),
+      inp=document.getElementById("bot-in"),form=document.getElementById("bot-form"),
+      openBtn=document.getElementById("bot-open"),closeBtn=document.getElementById("bot-close");
+  var iniciado=false, st={modo:"menu",i:-1,d:{},seed:"",zona:null};
+
+  var MENU=["Buscar un repuesto","Pedir presupuesto","Zona y envíos","Cómo comprar","Marcas","Hablar con una persona"];
+  var TIPOS=["Particular","Taller","Empresa","Productor","Compañía de seguros"];
+  var PASOS=[
+    {k:"tipo",l:"Solicita",q:"¿Quién solicita?",opts:TIPOS},
+    {k:"nombre",l:"Nombre o razón social",q:"¿Cuál es tu nombre o razón social?"},
+    {k:"loc",l:"Localidad",q:"¿De qué localidad sos?"},
+    {k:"prov",l:"Provincia",q:"Para coordinar el envío, ¿en qué provincia estás?",si:function(){return st.zona&&st.zona.k==="nacional";}},
+    {k:"veh",l:"Vehículo",q:"¿Marca y modelo del vehículo? (Ej: Ford Ranger)"},
+    {k:"anio",l:"Año/motor",q:"¿Año del vehículo? Si lo sabés, sumá el motor (Ej: 2016, 3.2 diésel).",opt:true},
+    {k:"pat",l:"Patente",q:"¿Cuál es la patente?",opt:true},
+    {k:"motor",l:"Nº de motor",q:"¿Número de motor? Figura en la tarjeta verde.",opt:true},
+    {k:"chasis",l:"Nº de chasis",q:"¿Número de chasis? Es obligatorio y figura en la tarjeta verde."},
+    {k:"sin",l:"Seguro/siniestro",q:"Como es por seguro: ¿compañía y número de siniestro?",si:function(d){return d.tipo==="Compañía de seguros";}},
+    {k:"rep",l:"Repuesto",q:"¿Qué repuesto necesitás? Si tenés el código, pasalo."},
+    {k:"verde",l:"Foto tarjeta verde",q:"¿Vas a adjuntar la foto de la tarjeta verde por WhatsApp?",opts:["Sí","No"]}
+  ];
+  var INFO={
+    zona:"Así atendemos según dónde estés:\n\n🟦 Rosario: derivamos tu consulta internamente a la casa central de FIXCAR Rosario, que te contesta.\n\n🟩 Zona de influencia (Chabás, Casilda, Pujato, Arequito, San José de la Esquina, Los Molinos, Arteaga, Fuentes, Villada, Firmat y alrededores): repartimos desde Chabás. Los días y costos de reparto se confirman al pedir.\n\n🟧 Resto del país: enviamos a todo el país y coordinamos el envío con vos.",
+    como:"Es así:\n1. Pedís por WhatsApp, por la web o con tu representante.\n2. Te confirmamos repuesto, disponibilidad y condiciones.\n3. La casa central de FIXCAR en Rosario factura y prepara el pedido.\n4. Lo recibís: distribuimos desde Chabás por tu zona o enviamos a todo el país.",
+    marcas:"Somos multimarca: Ford, Toyota, Volkswagen, Chevrolet, Renault, Fiat y todas las demás. Buscamos por marca, modelo, año, motor, patente o código.\n\nCategorías: motor y distribución, frenos y suspensión, baterías, carrocería, filtros y lubricantes, accesorios y herramientas para talleres.",
+    precio:"El precio, la disponibilidad y las condiciones de pago dependen del repuesto y del vehículo, y las confirma una persona de nuestro equipo.\n\nSi me pasás tus datos y los del vehículo, te derivo con todo armado y te responden más rápido."
+  };
+  var REGLAS=[
+    [/zona|reparto|env[ií]o|entrega|llegan|distribu|localidad/,"zona"],
+    [/c[oó]mo (comprar|compro|pido|funciona)|comprar|^c[oó]mo/,"como"],
+    [/marca|multimarca|camioneta|ford|toyota|volkswagen|chevrolet|renault|fiat|categor/,"marcas"],
+    [/precio|cu[aá]nto|cuesta|valor|stock|disponib|cuota|pago|tarjeta de cr|financ|descuento|factura/,"precio"],
+    [/presupuesto/,"presu"],
+    [/buscar|repuesto|pieza|necesito|busco|pedido|pedir/,"buscar"],
+    [/persona|humano|asesor|atenci[oó]n|hablar|operador|whatsapp/,"persona"],
+    [/^(hola|buen|buenas|hey)/,"hola"]
+  ];
+
+  function say(t,who,zona){var m=document.createElement("div");m.className="m "+(who||"b")+(zona?" z-"+zona:"");m.textContent=t;log.appendChild(m);log.scrollTop=log.scrollHeight;}
+  function opts(list){
+    qr.innerHTML="";
+    list.forEach(function(o){
+      var b=document.createElement("button");b.type="button";b.textContent=o;
+      b.addEventListener("click",function(){recibir(o);});qr.appendChild(b);
+    });
+  }
+  function menu(msg){st.modo="menu";st.i=-1;st.d={};st.zona=null;say(msg||"¿En qué te ayudo?");opts(MENU);}
+  function aMenu(t){return /^(men[uú]|cancelar|inicio|volver)/i.test(t.trim());}
+  function limpiar(s){s=(s||"").replace(/^hola,?\s*/i,"").replace(/\.\s*$/,"");return s.charAt(0).toUpperCase()+s.slice(1);}
+
+  /* Solo lo que el cliente escribe o toca aparece como mensaje suyo */
+  function recibir(t){
+    t=(t||"").trim();if(!t)return;
+    say(t,"u");
+    if(aMenu(t)){menu();return;}
+    if(st.modo==="seed"){
+      if(/^s[ií]/i.test(t)){iniciar(st.seed);}
+      else if(/^(otra|no)/i.test(t)){menu();}
+      else{say("Elegí una de las opciones, por favor.");}
+      return;
+    }
+    if(st.modo==="flujo"){paso(t);return;}
+    if(st.modo==="confirmar"){confirmar(t);return;}
+    intencion(t);
+  }
+
+  function intencion(t){
+    var s=t.toLowerCase();
+    if(/^otra consulta/.test(s)){menu();return;}
+    var r=null;
+    for(var i=0;i<REGLAS.length;i++){if(REGLAS[i][0].test(s)){r=REGLAS[i][1];break;}}
+    var pista=(r===null||r==="zona")?zonaPista(t):null;
+    if(pista){say(pista.nota,"b",pista.k);opts(["Cargar mis datos y hablar con una persona","Otra consulta"]);return;}
+    if(r==="zona"||r==="como"||r==="marcas"||r==="precio"){
+      say(INFO[r]);opts(["Cargar mis datos y hablar con una persona","Otra consulta"]);return;
+    }
+    if(r==="presu"||r==="buscar"||r==="persona"){iniciar();return;}
+    if(r==="hola"){menu("¡"+saludo()+"! ¿En qué te ayudo?");return;}
+    say("No estoy seguro de haber entendido. Puedo responderte al instante sobre estos temas; si necesitás que te atienda una persona, antes te pido tus datos y los del vehículo.");
+    opts(MENU);
+  }
+
+  function iniciar(seed){
+    st.modo="flujo";st.i=-1;st.d={};st.seed=seed||"";st.zona=null;
+    say("Para que una persona de nuestro equipo te atienda necesito unos datos, los mismos que pedimos en los formularios. Son pocos.");
+    siguiente();
+  }
+  function siguiente(){
+    st.i++;
+    while(st.i<PASOS.length&&PASOS[st.i].si&&!PASOS[st.i].si(st.d)){st.i++;}
+    if(st.i>=PASOS.length){resumen();return;}
+    preguntar();
+  }
+  function preguntar(){
+    var p=PASOS[st.i];say(p.q);
+    var o=(p.opts||[]).slice();if(p.opt)o.push("Omitir");o.push("Menú");opts(o);
+  }
+  function paso(t){
+    var p=PASOS[st.i],val=t.trim();
+    if(p.opts){
+      var m=p.opts.filter(function(o){return o.toLowerCase()===val.toLowerCase();})[0];
+      if(!m){say("Elegí una de las opciones, por favor.");return;}
+      val=m;
+    }
+    if(p.opt&&/^omitir$/i.test(val)){val="";}
+    else if(!val){say("Necesito este dato para continuar.");return;}
+    if(p.k==="chasis"){
+      if(!/^[A-Za-z0-9\- ]{5,}$/.test(val)){say("El número de chasis es obligatorio y figura en la tarjeta verde. Revisalo y escribilo de nuevo.");return;}
+      val=val.toUpperCase();
+    }
+    st.d[p.k]=val;
+    if(p.k==="loc"){
+      st.zona=zonaDe(val);
+      if(st.zona.nota){say(st.zona.nota,"b",st.zona.k);}
+    }
+    siguiente();
+  }
+
+  function lineas(conZona){
+    var d=st.d,out=[];
+    if(conZona&&st.zona){zonaCampos(st.zona).forEach(function(c){out.push(c);});}
+    PASOS.forEach(function(p){if(d[p.k])out.push([p.l,p.k==="verde"?(d[p.k]==="Sí"?"Sí, la adjunta por WhatsApp":"No"):d[p.k]]);});
+    if(st.seed)out.push(["Consulta inicial",limpiar(st.seed)]);
+    return out;
+  }
+  function resumen(){
+    st.modo="confirmar";
+    say("Revisá tus datos:\n"+lineas(true).map(function(c){return c[0]+": "+c[1];}).join("\n"),"b",st.zona&&st.zona.k);
+    opts(["Enviar consulta","Corregir (empezar de nuevo)","Menú"]);
+  }
+  function confirmar(t){
+    if(/^enviar/i.test(t)){enviar();return;}
+    if(/corregir|empezar/i.test(t)){iniciar(st.seed);return;}
+    say("Elegí \"Enviar consulta\" o \"Corregir\".");
+  }
+  function enviar(){
+    var d=st.d,z=st.zona||zonaDe(d.loc),campos=lineas(false);
+    var wa=saludoWA()+" Soy "+d.nombre+" ("+d.tipo+") y hago una consulta desde la web (asistente).\n"+zonaWA(z)+"\n"+campos.map(function(c){return c[0]+": "+c[1];}).join("\n")+(d.verde==="Sí"?"\n(Adjunto foto de la tarjeta verde)":"");
+    var ok=enviarTodo("Consulta por asistente web",d.nombre,campos,wa,function(mailOk){
+      say(mailOk?"Tu consulta también quedó registrada por mail en nuestro equipo.":"No pudimos enviar el mail, pero con WhatsApp alcanza: una persona te responde por ahí.");
+    },z);
+    if(!ok){say("Ya estoy enviando tu consulta, esperá unos segundos.");return;}
+    st.modo="menu";
+    var extra=z.k==="rosario"?"Nuestro equipo la deriva internamente a la casa central de FIXCAR Rosario, que te contesta.":
+              z.k==="region"?"Una persona de Chabás te responde y confirma días y costo de reparto.":
+              "Una persona de nuestro equipo te responde y coordina el envío a tu provincia.";
+    say("Listo. Se abrió WhatsApp con tu consulta armada: tocá Enviar ahí y adjuntá la foto de la tarjeta verde y del repuesto. "+extra,"b",z.k);
+    opts(["Otra consulta"]);
+  }
+
+  /* Desde un botón de la página: el asistente muestra la consulta y PREGUNTA si seguimos; sigue recién cuando el cliente responde. */
+  function preguntarSeed(seed){
+    st.modo="seed";st.seed=seed;st.i=-1;st.d={};st.zona=null;
+    say("¿Seguimos con esta consulta? «"+limpiar(seed)+"»");
+    opts(["Sí, seguir","Otra consulta"]);
+  }
+
+  /* Al abrir: primero saluda; después pregunta; recién después contesta. Nunca habla por el cliente. */
+  function abrir(seed){
+    panel.classList.add("open");openBtn.setAttribute("aria-expanded","true");
+    if(!iniciado){
+      iniciado=true;
+      say("¡"+saludo()+"! Soy el asistente automático de FIXCAR Chabás. Respondo al instante las consultas más comunes y, si necesitás que te atienda una persona, antes te pido los datos tuyos y del vehículo.");
+      if(!seed)menu("¿En qué te ayudo?");
+    }
+    if(seed){preguntarSeed(seed);}
+    inp.focus();
+  }
+  function cerrar(){panel.classList.remove("open");openBtn.setAttribute("aria-expanded","false");openBtn.focus();}
+
+  openBtn.addEventListener("click",function(){panel.classList.contains("open")?cerrar():abrir();});
+  closeBtn.addEventListener("click",cerrar);
+  panel.addEventListener("keydown",function(e){if(e.key==="Escape"){cerrar();}});
+  form.addEventListener("submit",function(e){e.preventDefault();var t=inp.value;inp.value="";recibir(t);});
+  return {open:abrir};
+})();
+
+/* Enlaces y botones */
+document.querySelectorAll("[data-wa]").forEach(function(a){
+  a.addEventListener("click",function(e){
+    e.preventDefault();
+    var t=a.getAttribute("data-wa");
+    if(CONFIG.botPrimero){Bot.open(t);}else{abrirWA(t);}
+  });
+});
+["catalogo","web-oficial","web-oficial-nav"].forEach(function(id){
+  var el=document.getElementById(id), u=id==="catalogo"?CONFIG.catalogoUrl:CONFIG.webOficialUrl;
+  if(u){el.href=u}else{el.addEventListener("click",function(e){e.preventDefault();alert("Falta cargar el enlace oficial de FIXCAR.");});}
+});
+if(CONFIG.whatsapp){document.getElementById("tel-visible").textContent=CONFIG.whatsappVisible;}
+["wa-central","wa-central-f"].forEach(function(id){var el=document.getElementById(id);el.href="https://wa.me/"+CONFIG.casaCentral+"?text="+encodeURIComponent("Hola, soy de la zona de Chabás y quiero hacer una consulta.");el.target="_blank";el.rel="noopener";});
+</script>
+</body>
+</html>
